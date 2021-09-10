@@ -8,7 +8,7 @@ public class Animal : MonoBehaviour
     [SerializeField] bool movingRight;
     [SerializeField] GameManager gm;
     [SerializeField] int numDisparos;
-
+    public bool lento = false;
     float minX, maxX;
 
     // Start is called before the first frame update
@@ -49,24 +49,41 @@ public class Animal : MonoBehaviour
         if (colisionando.tag == "Disparo")
         {
             ReducirVida();
-            if (numDisparos < 1)
+            if (gm.lento == true)
             {
+                numDisparos = 1;
                 Destroy(this.gameObject);
                 gm.ReducirNumEnemigos();
             }
+            else
+            {
+                if (numDisparos < 1)
+                {
+
+                    Destroy(this.gameObject);
+                    gm.ReducirNumEnemigos();
+                }
+            }
+            
             
         }
 
         else if(colisionando.tag == "Disparo2")
         {
             
-            Destroy(this.gameObject);
-            gm.ReducirNumEnemigos();
+            ReducirVida();
+            if (numDisparos < 1)
+            {
+
+                Destroy(this.gameObject);
+                gm.ReducirNumEnemigos();
+            }
         }
     }
 
     void ReducirVida()
     {
+
         numDisparos = numDisparos - 1;
     }
 }

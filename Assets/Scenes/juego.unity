@@ -1223,10 +1223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e60f5fb1090f647829442ef07040b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   fireRate: 1
   fireRate2: 1.2
   gamePaused: 0
+  lento: 0
   disparo: {fileID: 1677960821444680213, guid: e01ea83fa00612a42ae2f26d3249f196, type: 3}
   disparo2: {fileID: 2254662930717933094, guid: 78666c4e33efc3947980e4e71514f072, type: 3}
 --- !u!212 &756211474
@@ -2247,6 +2248,10 @@ PrefabInstance:
     - target: {fileID: 6171551646313357226, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_Radius
       value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171551646313357227, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6171551646313357229, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_RootOrder

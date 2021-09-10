@@ -8,10 +8,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvas;
     bool gamePaused = false;
     bool gameOver = false;
-    bool lento = false;
+   public bool lento = false;
     [SerializeField] AlienMovimiento player;
     [SerializeField] int numEnemies;
     [SerializeField] int nivel;
+    float usos = 3;
+    float duraLento= 2;
+    float slow=0;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +32,25 @@ public class GameManager : MonoBehaviour
             PauseGame();
         }
 
-        if (Input.GetKeyDown(KeyCode.RightControl) && gameOver == false && lento==false)
+        if (Input.GetKeyDown(KeyCode.X) && gameOver == false && Time.time>= slow && lento==false && usos > 0)
         {
             TiempoLento();
+            slow = Time.time + duraLento;
+            usos = usos - 1;
         }
+
+        if (gameOver == false && Time.time >= slow)
+        {
+            TiempoNormal();
+
+        }
+
+
     }
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("juego");
     }
 
@@ -66,12 +82,18 @@ public class GameManager : MonoBehaviour
 
     public void TiempoLento()
     {
-        lento = lento ? false : true; 
-
-        player.lento = lento;
-
         
-        Time.timeScale = gamePaused ? 0.5f : 1;
+            lento = lento ? false : true;
+            player.lento = lento;
+        Time.timeScale = lento ? 0.5f : 1;
+        
+    }
+
+    public void TiempoNormal()
+    {
+        lento = false;
+       
+        Time.timeScale = 1;
     }
 
     public void ReducirNumEnemigos()
@@ -79,6 +101,7 @@ public class GameManager : MonoBehaviour
         numEnemies = numEnemies - 1;
         if (numEnemies<1 && nivel==1)
         {
+
             Level2();
         }
 
@@ -104,13 +127,13 @@ public class GameManager : MonoBehaviour
 
     void Level2()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         SceneManager.LoadScene("medio1");
     }
 
     void Level3()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         SceneManager.LoadScene("medio2");
     }
 

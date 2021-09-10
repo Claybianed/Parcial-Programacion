@@ -1223,10 +1223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e60f5fb1090f647829442ef07040b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 5
   fireRate: 1
   fireRate2: 1.2
   gamePaused: 0
+  lento: 0
   disparo: {fileID: 1677960821444680213, guid: e01ea83fa00612a42ae2f26d3249f196, type: 3}
   disparo2: {fileID: 2254662930717933094, guid: 78666c4e33efc3947980e4e71514f072, type: 3}
 --- !u!212 &756211474
@@ -1366,6 +1367,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1043832133}
+    - target: {fileID: 6072226924717837935, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
 --- !u!1 &847889467
@@ -2026,6 +2031,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1043832133}
+    - target: {fileID: 6171551646313357225, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6171551646313357226, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_Radius
       value: 0.72
@@ -2235,9 +2244,17 @@ PrefabInstance:
       propertyPath: movingRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6171551646313357225, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6171551646313357226, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_Radius
       value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171551646313357227, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 6171551646313357229, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_RootOrder
@@ -2372,6 +2389,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1043832133}
+    - target: {fileID: 6072226924717837935, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
 --- !u!1 &2096115494
@@ -2549,6 +2570,10 @@ PrefabInstance:
       propertyPath: movingRight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6171551646313357225, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6171551646313357226, guid: 2176f415ae1e5c045821c2334eebfb7b, type: 3}
       propertyPath: m_Radius
       value: 0.66
@@ -2686,5 +2711,9 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1043832133}
+    - target: {fileID: 6072226924717837935, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
+      propertyPath: numDisparos
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d430baf8f57c3a04b90952ff16690255, type: 3}
